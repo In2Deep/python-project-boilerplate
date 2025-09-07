@@ -1,0 +1,19 @@
+[project]
+name = "python-project-boilerplate"
+version = "0.1.0"
+description = "A reusable Python template with pre-commit, Ruff, pytest, mypy, and local CI guards."
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "Your Name" }]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]

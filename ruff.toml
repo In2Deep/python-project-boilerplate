@@ -1,0 +1,29 @@
+extend-exclude = [
+  "scripts/ci/**",
+]
+
+[lint]
+select = ["E","F","I","UP","B","TID","ANN"]
+ignore = ["E402"]
+
+[lint.flake8-tidy-imports.banned-api]
+"os.path" = { msg = "Use pathlib.Path" }
+"typing.List" = { msg = "Use built-in list[T]" }
+"typing.Dict" = { msg = "Use built-in dict[K, V]" }
+"typing.Optional" = { msg = "Use | None" }
+"typing.Tuple" = { msg = "Use tuple[T, ...]" }
+"typing.Set" = { msg = "Use set[T]" }
+"typing.TypeAlias" = { msg = "Use `type` statement" }
+
+[lint.per-file-ignores]
+"tests/**/*.py" = [
+  "ANN001",
+  "ANN002",
+  "ANN003",
+  "ANN201",
+  "ANN101",
+  "ANN202",
+  "B007",
+  "E501",
+  "F811",
+]
